@@ -10,18 +10,14 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                bat 'mvn clean compile'
+                bat cd SBSecurity && 'mvn clean compile'
             }
         }
         stage('Test') {
             steps {
-                bat 'mvn test'
+                bat cd SBSecurity && 'mvn test'
             }
         }
-        stage('Package') {
-            steps {
-                bat 'mvn package'
-            }
+
         }
     }
-}
